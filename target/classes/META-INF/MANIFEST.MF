@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 11
-Implementation-Title: proBook
-Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: alwin
+Build-Jdk: 11.0.6
 Created-By: Maven Integration for Eclipse
 
