@@ -64,7 +64,7 @@ public class FunctionalityTests {
 	public void allFunctionalityTest() throws InterruptedException {
 		this.driver.get(this.destination + Constants.ADD_TYPE);
 		this.addTypePage.submitType(this.typeName);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert = this.driver.switchTo().alert().getText();
 		assertEquals("Type Created", alert);
 		this.driver.switchTo().alert().accept();
@@ -72,45 +72,45 @@ public class FunctionalityTests {
 		
 		this.driver.get(this.destination + Constants.ADD_BOOKMARK);
 		this.addBookmarkPage.submitBookmark(bookmarkName, bookmarkDescription, bookmarkUrl);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert2 = this.driver.switchTo().alert().getText();
 		assertEquals("Bookmark Created", alert2);
 		this.driver.switchTo().alert().accept();
 
 		this.driver.get(this.destination + Constants.VIEW_BOOKMARK);
 		this.viewBookmarkPage.viewBookmark();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 
 		this.viewBookmarkPage.editBookmark();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 
 		this.viewBookmarkPage.saveEditedBookmark(editedBookmarkName, editedBookmarkDescription, editedBookmarkUrl);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert3 = this.driver.switchTo().alert().getText();
 		assertEquals("Bookmark Updated", alert3);
 		this.driver.switchTo().alert().accept();
 
 		this.viewBookmarkPage.deleteBookmark();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert4 = this.driver.switchTo().alert().getText();
 		assertEquals("Bookmark Deleted", alert4);
 		this.driver.switchTo().alert().accept();
 		Thread.sleep(2000);
 
 		this.driver.get(this.destination + Constants.VIEW_TYPE);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		this.viewTypePage.editType();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		
 		this.viewTypePage.saveEditedType(this.editedTypeName);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert5 = this.driver.switchTo().alert().getText();
 		assertEquals("Type Updated", alert5);
 		this.driver.switchTo().alert().accept();
 
 
 		this.viewTypePage.deleteType();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String alert6 = this.driver.switchTo().alert().getText();
 		assertEquals("Type Deleted", alert6);
 		this.driver.switchTo().alert().accept();
