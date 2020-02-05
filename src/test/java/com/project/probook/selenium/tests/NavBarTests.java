@@ -51,7 +51,7 @@ public class NavBarTests {
 	public void setup() {
 		System.setProperty(Constants.PROPERTY, Constants.PATH);
 		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(true);
+		//options.setHeadless(true);
 		this.driver = new ChromeDriver(options);
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 
