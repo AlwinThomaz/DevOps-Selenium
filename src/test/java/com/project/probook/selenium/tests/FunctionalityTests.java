@@ -106,7 +106,9 @@ public class FunctionalityTests {
 		String alert5 = this.driver.switchTo().alert().getText();
 		assertEquals("Type Updated", alert5);
 		this.driver.switchTo().alert().accept();
-
+		
+		
+		
 		this.viewTypePage.deleteType();
 		wait.until(ExpectedConditions.alertIsPresent());
 		String alert6 = this.driver.switchTo().alert().getText();

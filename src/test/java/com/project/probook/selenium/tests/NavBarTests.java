@@ -27,20 +27,13 @@ public class NavBarTests {
 	private ViewBookmarkPage viewBookmarkPage;
 	private ViewTypePage viewTypePage;
 
-	private String destination;
+	private String destination = "http://ec2-18-130-137-82.eu-west-2.compute.amazonaws.com/";
 
 	@Before
 	public void setup() {
 		System.setProperty(Constants.PROPERTY, Constants.PATH);
 		ChromeOptions options = new ChromeOptions();
 		// options.setHeadless(true);
-		options.addArguments("start-maximized"); // open Browser in maximized mode
-		options.addArguments("disable-infobars"); // disabling infobars
-		options.addArguments("--disable-extensions"); // disabling extensions
-		options.addArguments("--disable-gpu"); // applicable to windows os only
-		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-		options.addArguments("--no-sandbox"); // Bypass OS security model
-		options.setExperimentalOption("useAutomationExtension", true);
 		this.driver = new ChromeDriver(options);
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 
