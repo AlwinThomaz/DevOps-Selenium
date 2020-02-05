@@ -2,6 +2,7 @@ package com.project.probook.selenium.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.Dimension;
@@ -38,11 +39,16 @@ public class NavBarTests {
 		this.driver.manage().window().setSize(new Dimension(1600, 700));
 
 		this.indexPage = PageFactory.initElements(this.driver, IndexPage.class);
-		this.addTypePage = PageFactory.initElements(this.driver, AddTypePage.class);
-		this.addBookmarkPage = PageFactory.initElements(this.driver, AddBookmarkPage.class);
-		this.viewBookmarkPage = PageFactory.initElements(this.driver, ViewBookmarkPage.class);
-		this.viewTypePage = PageFactory.initElements(this.driver, ViewTypePage.class);
+//		this.addTypePage = PageFactory.initElements(this.driver, AddTypePage.class);
+//		this.addBookmarkPage = PageFactory.initElements(this.driver, AddBookmarkPage.class);
+//		this.viewBookmarkPage = PageFactory.initElements(this.driver, ViewBookmarkPage.class);
+//		this.viewTypePage = PageFactory.initElements(this.driver, ViewTypePage.class);
 		this.destination = Constants.HOST;
+	}
+	
+	@After
+	public void teardown() {
+		driver.quit();
 	}
 
 	@Test
@@ -51,33 +57,34 @@ public class NavBarTests {
 		this.indexPage.goIndexPage();
 		assertEquals(driver.getCurrentUrl(), this.destination + Constants.INDEX);
 	}
-
-	@Test
-	public void navigateAddTypeTest() {
-		this.driver.get(this.destination);
-		this.indexPage.goAddTypePage();
-		assertEquals(driver.getCurrentUrl(), this.destination + Constants.ADD_TYPE);
-	}
-
-	@Test
-	public void navigateAddBookmarkTest() {
-		this.driver.get(this.destination);
-		this.indexPage.goAddBookmarkPage();
-		assertEquals(driver.getCurrentUrl(), this.destination + Constants.ADD_BOOKMARK);
-	}
-	
-	@Test
-	public void navigateViewBookmarkTest() {
-		this.driver.get(this.destination);
-		this.indexPage.goViewBookmarkPage();
-		assertEquals(driver.getCurrentUrl(), this.destination + Constants.VIEW_BOOKMARK);
-	}
-	
-	@Test
-	public void navigateViewTypeTest() {
-		this.driver.get(this.destination);
-		this.indexPage.goViewTypePage();
-		assertEquals(driver.getCurrentUrl(), this.destination + Constants.VIEW_TYPE);
-	}
-
 }
+
+//	@Test
+//	public void navigateAddTypeTest() {
+//		this.driver.get(this.destination);
+//		this.indexPage.goAddTypePage();
+//		assertEquals(driver.getCurrentUrl(), this.destination + Constants.ADD_TYPE);
+//	}
+//
+//	@Test
+//	public void navigateAddBookmarkTest() {
+//		this.driver.get(this.destination);
+//		this.indexPage.goAddBookmarkPage();
+//		assertEquals(driver.getCurrentUrl(), this.destination + Constants.ADD_BOOKMARK);
+//	}
+//	
+//	@Test
+//	public void navigateViewBookmarkTest() {
+//		this.driver.get(this.destination);
+//		this.indexPage.goViewBookmarkPage();
+//		assertEquals(driver.getCurrentUrl(), this.destination + Constants.VIEW_BOOKMARK);
+//	}
+//	
+//	@Test
+//	public void navigateViewTypeTest() {
+//		this.driver.get(this.destination);
+//		this.indexPage.goViewTypePage();
+//		assertEquals(driver.getCurrentUrl(), this.destination + Constants.VIEW_TYPE);
+//	}
+//
+//}
